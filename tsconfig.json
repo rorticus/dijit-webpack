@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "lib": [
+      "dom",
+      "es2015",
+      "scripthost"
+    ],
+    "module": "amd",
+    "removeComments": false,
+    "target": "es5",
+    "noImplicitThis": true
+  },
+  "include": [
+    "./node_modules/dojo-typings/dojo/1.11/modules.d.ts",
+    "./node_modules/dojo-typings/dijit/1.11/modules.d.ts",
+    "./node_modules/dojo-typings/dojo/1.11/loader.d.ts",
+    "./src/**/*.ts"
+  ]
+}
