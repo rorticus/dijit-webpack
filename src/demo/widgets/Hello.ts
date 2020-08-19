@@ -11,7 +11,6 @@ export default declare([_WidgetBase, _WidgetBase], {
     },
     postCreate: function () {
         this.inherited(arguments);
-        console.log('postCreate');
     },
     buildRendering: function () {
         this.domNode = domConstruct.create("div");

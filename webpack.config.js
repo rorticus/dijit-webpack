@@ -1,6 +1,7 @@
 const DojoWebpackPlugin = require("dojo-webpack-plugin");
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     mode: 'development',
@@ -43,6 +44,13 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html'
+        }),
+        new CopyWebpackPlugin({
+            patterns: [{
+                context: "node_modules",
+                from: "dojo/resources/blank.gif",
+                to: "dojo/resources"
+            }]
         })
     ]
 };

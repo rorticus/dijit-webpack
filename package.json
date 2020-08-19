@@ -9,6 +9,7 @@
   "author": "Neil Roberts",
   "license": "ISC",
   "devDependencies": {
+    "copy-webpack-plugin": "^6.0.3",
     "dijit": "^1.16.3",
     "dojo-typings": "^1.11.11",
     "dojo-util": "^1.16.3",
