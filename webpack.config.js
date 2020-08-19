@@ -17,11 +17,11 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                exclude: /.*node_modules.*/,
+                exclude: [/.*node_modules.*/],
                 loader: "ts-loader",
                 options: {
                     configFile: path.resolve(__dirname, 'tsconfig.json'),
-                    transpileOnly:true
+                    transpileOnly: true
                 }
             }
         ]
@@ -41,6 +41,8 @@ module.exports = {
             locales: ["en"],
             noConsole: true
         }),
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        })
     ]
 };

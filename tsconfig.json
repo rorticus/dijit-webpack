@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
+    "allowJs": false,
+    "checkJs": false,
+    "declaration": false,
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "lib": [
       "dom",
@@ -11,7 +13,8 @@
     "module": "amd",
     "removeComments": false,
     "target": "es5",
-    "noImplicitThis": true
+    "noImplicitThis": true,
+    "noImplicitUseStrict": true
   },
   "include": [
     "./node_modules/dojo-typings/dojo/1.11/modules.d.ts",
