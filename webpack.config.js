@@ -11,8 +11,22 @@ module.exports = {
         'index': ['src/demo/index.ts']
     },
     output: {
-        path: path.join(__dirname, 'build'),
-        filename: 'bundle.js'
+        path: path.join(__dirname, 'build')
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            cacheGroups: {
+                widgets: {
+                    name: 'widgets',
+                    test: /[\\/]widgets[\\/]/,
+                },
+                default: {
+                    minChunks: 2,
+                    priority: -20
+                }
+            }
+        }
     },
     module: {
         rules: [
@@ -40,7 +54,8 @@ module.exports = {
             environment: { dojoRoot: "" },
             buildEnvironment: { dojoRoot: "node_modules" },
             locales: ["en"],
-            noConsole: true
+            noConsole: true,
+            async: true
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html'
