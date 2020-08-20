@@ -4,7 +4,8 @@
   "description": "A hello world example with Dijit",
   "main": "build/src/index.html",
   "scripts": {
-    "serve": "http-server build/src -c-1"
+    "serve": "http-server build/src -c-1",
+    "build": "webpack"
   },
   "author": "Neil Roberts",
   "license": "ISC",
