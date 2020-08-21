@@ -1,10 +1,8 @@
 import win from "dojo/_base/window";
 import dom from "dojo/dom";
 
-declare const cjsRequire: any;
-
 setTimeout(async () => {
-    const { default: Hello } = cjsRequire('./widgets/Hello');
+    const { default: Hello } = await import('./widgets/Hello');
 
     function greet(name = 'World') {
         dom.byId<HTMLElement>("mainHeading").innerText = `Hello ${name}!`;
