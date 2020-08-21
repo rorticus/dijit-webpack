@@ -14,7 +14,7 @@
     "dijit": "^1.16.3",
     "dojo-typings": "^1.11.11",
     "dojo-util": "^1.16.3",
-    "dojo-webpack-plugin": "^2.8.16",
+    "dojo-webpack-plugin": "^2.8.17-rc1",
     "html-webpack-plugin": "^4.3.0",
     "http-server": "^0.12.1",
     "ts-loader": "^8.0.2",

@@ -10,9 +10,9 @@
       "es2015",
       "scripthost"
     ],
-    "module": "amd",
+    "module": "AMD",
     "removeComments": false,
-    "target": "es5",
+    "target": "es6",
     "noImplicitThis": true,
     "noImplicitUseStrict": true
   },

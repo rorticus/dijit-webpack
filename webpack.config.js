@@ -11,19 +11,16 @@ module.exports = {
         'index': ['src/demo/index.ts']
     },
     output: {
-        path: path.join(__dirname, 'build')
+        path: path.join(__dirname, 'build'),
+        chunkFilename: '[name].bundle.js'
     },
     optimization: {
         splitChunks: {
             chunks: 'all',
+            minSize: 0,
             cacheGroups: {
                 widgets: {
-                    name: 'widgets',
-                    test: /[\\/]widgets[\\/]/,
-                },
-                default: {
-                    minChunks: 2,
-                    priority: -20
+                    test: /[\\/]widgets[\\/]/
                 }
             }
         }
@@ -35,8 +32,7 @@ module.exports = {
                 exclude: [/.*node_modules.*/],
                 loader: "ts-loader",
                 options: {
-                    configFile: path.resolve(__dirname, 'tsconfig.json'),
-                    transpileOnly: true
+                    configFile: path.resolve(__dirname, 'tsconfig.json')
                 }
             }
         ]
@@ -54,8 +50,7 @@ module.exports = {
             environment: { dojoRoot: "" },
             buildEnvironment: { dojoRoot: "node_modules" },
             locales: ["en"],
-            noConsole: true,
-            async: true
+            noConsole: true
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html'

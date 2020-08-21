@@ -1,14 +1,19 @@
 import win from "dojo/_base/window";
 import dom from "dojo/dom";
-import Hello from "./widgets/Hello";
 
-function greet(name = 'World') {
-    dom.byId<HTMLElement>("mainHeading").innerText = `Hello ${name}!`;
-}
-greet();
+declare const cjsRequire: any;
 
-(new Hello({
-    onChange: function (name: string) {
-        greet(name);
+setTimeout(async () => {
+    const { default: Hello } = cjsRequire('./widgets/Hello');
+
+    function greet(name = 'World') {
+        dom.byId<HTMLElement>("mainHeading").innerText = `Hello ${name}!`;
     }
-})).placeAt(win.body());
+    greet();
+    
+    (new Hello({
+        onChange: function (name: string) {
+            greet(name);
+        }
+    })).placeAt(win.body());    
+}, 1000);
